@@ -159,7 +159,7 @@ end
 
 function EnemyService:OnHeartbeat(dt: number)
 	for _, enemy in enemies do
-		--task.desynchronize()
+		task.desynchronize()
 		
 		if not workspace:FindFirstChild("Nodes") then return end
 		
