@@ -1,6 +1,17 @@
 -- stimpank EnemyService for Universal Tower Defense
 -- version: 0.0.2
 
+-- not using OOP and other things on server, for better readabillity and performance (yeah, have some bad experience with OOP on server)
+--[[ this service is created for Managing Enemies for tower defense game, some functions available:
+    void Sync(Player player) - sends a current enemy data to SPECIFIC client, used when player joined later, when game is already started.
+    void SpawnEnemy(string name, CFrame startCF?, bool spawnAsBoss?, int currentNodeIndex?, int nextNodeIndex?) - spawns a new enemy by provided name, have optional parameters to specify exclusive behavior.
+    void DestroyEnemy(table enemy) - self explanatory, literally just destroys an enemy and fires event to all clients to delete enemy on their side.
+    void OnHeartbeat(float dt) - calculates new position data and new enemy statuses/modifiers when called every frame (RunService.Heartbeat event).
+    void ClearAll() - destroy all enemies in the game, internally uses :DestroyEnemy() method of EnemyService.
+    table GetEnemies() - self explanatory, retuns all enemies on the server
+    table GetEnemiesUseArray() - behaves similarly like :GetEnemies(), but returns an array of enemies instead of dictionary.
+]]
+
 local HttpService = game:GetService("HttpService")
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
