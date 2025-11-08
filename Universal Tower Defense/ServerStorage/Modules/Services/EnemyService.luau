@@ -54,7 +54,8 @@ function EnemyService:Sync(player: Player)
 			
 			CFrame = enemy.CFrame,
 			
-			Statuses = enemy.Statuses
+			Statuses = enemy.Statuses,
+            Mutatiins = enemy.Mutations
 		})
 	end
 end
