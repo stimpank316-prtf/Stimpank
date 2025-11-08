@@ -159,8 +159,6 @@ end
 
 function EnemyService:OnHeartbeat(dt: number)
 	for _, enemy in enemies do
-		task.desynchronize()
-		
 		if not workspace:FindFirstChild("Nodes") then return end
 		
 		local currentNode = workspace.Nodes:FindFirstChild(`Node{enemy.CurrentNodeIndex}`) :: BasePart
