@@ -1,5 +1,5 @@
 // cstring.h, lightweight "safe" strings (made by 1 hour)
-// #pramga once to ensure header file is included only once (alternative to include-guards)
+// #pragma once to ensure header file is included only once (alternative to include-guards)
 #pragma once 
 
 #include <string.h>
