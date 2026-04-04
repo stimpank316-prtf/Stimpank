@@ -23,4 +23,4 @@
   # void* vector_get_at(vector* vec, size_t index) - returns an element from a vector, if it'is not a nullptr.
   # void* vector_get_at_const(const vector* vec, size_t index) - returns an element from a vector as const, if it'is not a nullptr.
   # void vector_foreach(vector* vec, on_element callback, void* userData) - basic algorithm (std::foreach() analog, but without iterators) to iterate over a vector
-  # |void vector_internal_reallocate(vector* vec) - internal function; reallocates a vector, if it reached size limit
+  # |void vector_internal_reallocate(vector* vec) - internal function; reallocates a vector, if it's reached size limit
