@@ -1,5 +1,5 @@
-# 📦C-lightweight Containers📦
-# It is just a C analog of C++ STL containers made in 2-3 hours
+# 📦C-lightweight Vector and String implementation📦
+# It's just a C analog of C++ std::string and std::vector STL containers made in 2-3 hours
 # ⚡Motivation⚡
 # Why am i even made this? Answer is simple - test my skills in pointer arithmetic, knowledge of pointers, and just for fun
 # ✨Features✨
