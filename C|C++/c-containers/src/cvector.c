@@ -1,4 +1,4 @@
-// use C23 standard for nullptr (on gcc it is -std=c23)
+// use C23 for nullptr
 #include <stdio.h>
 
 #include "cvector.h"
@@ -45,6 +45,16 @@ void vector_clear(vector* vec) {
     size_t targetSize = 10 * vec->itemSize;
     void* target = malloc(targetSize);
     if (!target) return;
+
+    if (vec->onDestroy) {
+        for (size_t i = 0; i < vec->size; i++) {
+            void* element = (char)vec->data + (i* vec->itemSize);
+
+            if (element != nullptr) {
+                vec->onDestroy(element);
+            }
+        }
+    }
 
     free(vec->data);
     vec->size = 0;
